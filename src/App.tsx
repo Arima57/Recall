@@ -44,9 +44,9 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/folder/Inbox" />
+              <Redirect to="/crack/Add" />
             </Route>
-            <Route path="/folder/:name" exact={true}>
+            <Route path="/crack/:name" exact={true}>
               <Page />
             </Route>
           </IonRouterOutlet>

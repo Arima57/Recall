@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@capacitor/filesystem": "^6.0.1",
+    "capacitor-voice-recorder": "^6.0.3",
+    "groq": "^3.59.1",
+    "groq-sdk": "^0.7.0"
+  }
+}
