@@ -1,0 +1,8 @@
+{
+  "name": "Recall",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite",
+  "id": "664bae40"
+}
