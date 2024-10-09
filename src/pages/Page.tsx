@@ -1,17 +1,17 @@
 import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonLabel, IonItem, IonInput, IonTextarea, IonButton, IonIcon, IonPopover} from '@ionic/react';
-import { addOutline, micOutline} from 'ionicons/icons';
+import { addOutline, micOutline, ticket, refreshOutline} from 'ionicons/icons';
 import { useParams } from 'react-router';
 import { VoiceRecorder } from 'capacitor-voice-recorder';
 import { useState, useRef, useCallback } from 'react';
 import { AddActivityContent } from './Add/AddActivityContent';
-import QueryActivityContent from './Query/QueryActivityContent';
+import { QueryActivityContent } from './Query/QueryActivityContent';
 import ActivitiesListContent from './List/ActivitiesListContent';
+import Result from './Result/result';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
 
-let globalRecording: string = '';
 
-const Page: React.FC = () => {
+const Page: React.FC= () => {
   const { name } = useParams<{ name: string; }>();
 
   const renderPageContent = () => {
@@ -22,8 +22,8 @@ const Page: React.FC = () => {
         return <QueryActivityContent />;
       case 'List':
         return <ActivitiesListContent />;
-      default:
-        return <ExploreContainer name={name} />;
+      case 'Result':
+        return <Result/>;
     }
   };
 
@@ -35,6 +35,13 @@ const Page: React.FC = () => {
             <IonMenuButton />
           </IonButtons>
           <IonTitle>{name}</IonTitle>
+          {name === 'List' && (
+            <IonButtons slot="end">
+              <IonButton onClick={() => window.location.reload()}>
+                <IonIcon slot="icon-only" icon={refreshOutline} />
+              </IonButton>
+            </IonButtons>
+          )}
         </IonToolbar>
       </IonHeader>
 

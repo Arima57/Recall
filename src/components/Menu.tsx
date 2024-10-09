@@ -10,7 +10,7 @@ import {
   IonNote,
 } from '@ionic/react';
 
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, cardSharp, addSharp, searchSharp} from 'ionicons/icons';
 import './Menu.css';
 
@@ -44,9 +44,15 @@ const appPages: AppPage[] = [
 
 const Menu: React.FC = () => {
   const location = useLocation();
+  const history = useHistory();
+
+  const handleClick = (url: string) => {
+    history.push(url);
+    window.location.reload();
+  };
 
   return (
-    <IonMenu contentId="main" type="overlay">
+    <IonMenu contentId="main" type="overlay" color='dark'>
       <IonContent>
         <IonList id="inbox-list">
           <IonListHeader>Recall</IonListHeader>
@@ -54,7 +60,12 @@ const Menu: React.FC = () => {
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                <IonItem 
+                  className={location.pathname === appPage.url ? 'selected' : ''} 
+                  onClick={() => handleClick(appPage.url)} 
+                  lines="none" 
+                  detail={false}
+                >
                   <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
                   <IonLabel>{appPage.title}</IonLabel>
                 </IonItem>
