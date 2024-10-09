@@ -1,9 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'Recall',
-  webDir: 'dist'
+  appId: 'io.recall.ionic',
+  appName: 'recall',
+  webDir: 'dist',
 };
 
 export default config;
