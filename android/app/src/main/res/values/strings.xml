@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Recall</string>
     <string name="title_activity_main">Recall</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">io.recall.ionic</string>
+    <string name="custom_url_scheme">io.recall.ionic</string>
 </resources>

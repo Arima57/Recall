@@ -1,18 +1,90 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
+# Android
+android/.gradle/
+android/app/app.iml
+android/app/build/
+android/app/src/main/assets/public/
+!android/app/src/main/assets/public/.gitkeep
+android/app/src/main/java/
+android/app/src/main/res/
+android/app/src/main/libs/
+android/app/src/main/jniLibs/
+android/app/src/main/obj/
+android/app/src/main/gen/
+
+# iOS
+capacitor-ios/
+ios/IonicRunner/public/
+!ios/IonicRunner/public/.gitkeep
+ios/IonicRunner/Frameworks/
+ios/IonicRunner/Products/
+
+# Node.js and npm
+/node_modules/
 /.pnp
 .pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# testing
+# Testing
 /coverage
 
-# production
+# Production
 /dist
 
-# misc
+# Capacitor build artifacts
+Build/
+Index/
+*.sw*
+site/www
+
+# IntelliJ and Android Studio
+.idea/
+.dist/
+.sourcemaps/
+xcuserdata/
+
+# Other
+*.map
 .DS_Store
+Podfile.lock
+example/www/
+example/electron/www/
+example/electron/capacitor.config.json
+
+# Ignore specific files and folders
+!.gitkeep
+!/build/.npmkeep
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE specific files (consolidated)
+*.iml
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Debug and release APKs
+/android/app/*.apk
+
+# Output metadata files
+/output-metadata.json
+
+# Other generated files (consolidated)
+*.json
+*.js.map
+
+# Miscellaneous configuration files and caches
 .env.local
 .env.development.local
 .env.test.local
@@ -21,11 +93,6 @@
 /.nx/cache
 /.vscode/*
 !/.vscode/extensions.json
-.idea
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
